@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moodboard de la agencia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=DM+Mono:wght@400;500&family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE work: una propuesta de consultoría que se lee como moodboard de estudio
+   IDEA el tablero de corcho de un estudio de diseño: fichas, muestras de color, especímenes tipográficos
+   PICTURE collage de fichas pastel con los cinco nombres favoritos y las tres paletas
+   COLOUR blanco limpio, tinta verde casi negra, campos salvia/pistache/lila/mantequilla/cielo/durazno
+   TYPE Fraunces para títulos + Inter para texto; cada dirección visual muestra sus propias fuentes
+   LAYOUT laptop: título arriba, collage a todo lo ancho; teléfono: título, collage apilado, secciones en una columna */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#121814);--ink:light-dark(#1c2620,#eaefe9);--mute:light-dark(#56635b,#a9b6ad);--line:light-dark(#dfe5dd,#2a342d);--panel:light-dark(#f5f7f2,#1a221c);--t:#1c2620;--sal:#b5c9ae;--pis:#d3e3a4;--men:#c6ead9;--lil:#d6cbf0;--man:#f6e9ae;--cie:#bfdcf4;--dur:#f8cdb2}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.08;letter-spacing:-.02em;text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,5vw,52px)}
+h2{font-size:clamp(28px,3.6vw,40px);margin-bottom:12px}
+h3{font-size:22px;margin-bottom:6px}
+p{margin:0 0 12px;max-width:70ch}
+a{color:inherit}
+.band{padding-block:clamp(32px,4.5vw,72px);padding-inline:max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+.lead{font-size:18px;color:var(--mute);max-width:62ch}
+.small{font-size:14px;color:var(--mute)}
+nav.scroll{position:sticky;top:0;z-index:5;display:flex;gap:6px;overflow-x:auto;padding:10px max(5vw,16px);background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.scroll a{flex:none;text-decoration:none;font-size:14px;font-weight:500;padding:8px 14px;border-radius:99px;border:1px solid var(--line)}
+nav.scroll a:hover,nav.scroll a:focus-visible{background:var(--sal);color:var(--t);border-color:var(--sal);outline:none}
+@media(max-width:899px){nav.scroll{position:static}}
+.hero{background:var(--sal);color:var(--t)}
+.hero .lead{color:#33443a}
+.board{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:minmax(92px,auto);gap:12px;margin-top:28px}
+.pin{position:relative;border-radius:6px;padding:16px;color:var(--t);box-shadow:0 1px 0 rgba(0,0,0,.08),0 8px 18px -12px rgba(0,0,0,.35)}
+.pin::before{content:"";position:absolute;top:-9px;left:50%;width:64px;height:18px;transform:translateX(-50%) rotate(-3deg);background:rgba(255,255,255,.55);border:1px solid rgba(0,0,0,.05)}
+.pin b{display:block;font-family:Fraunces,serif;font-weight:600;font-size:clamp(30px,4vw,48px);line-height:1;letter-spacing:-.02em}
+.pin span{font-size:14px}
+.sw{display:flex;flex-direction:column;justify-content:flex-end;font:500 13px "DM Mono",monospace}
+.r1{transform:rotate(-1.2deg)}.r2{transform:rotate(1deg)}.r3{transform:rotate(-.5deg)}
+@media(prefers-reduced-motion:no-preference){.pin{transition:transform .25s}.pin:hover{transform:rotate(0) translateY(-3px)}}
+@media(max-width:760px){.board{grid-template-columns:repeat(2,minmax(0,1fr))}.board .pin{grid-column:auto!important;grid-row:auto!important}}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media(max-width:860px){.grid3{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:700px){.grid2{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.chips button{font:500 14px Inter,sans-serif;min-height:44px;padding:8px 16px;border-radius:99px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.chips button[aria-pressed=true]{background:var(--t);color:#fff;border-color:var(--t)}
+:root[data-theme=dark] .chips button[aria-pressed=true]{background:var(--sal);color:var(--t)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .chips button[aria-pressed=true]{background:var(--sal);color:var(--t)}}
+.chips button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.names{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:16px}
+.nm{border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--bg);display:flex;flex-direction:column}
+.nm header{padding:18px;color:var(--t)}
+.nm header b{font-family:Fraunces,serif;font-size:40px;line-height:1;letter-spacing:-.02em;display:block}
+.nm header i{font-style:normal;font-size:14px}
+.nm dl{margin:0;padding:14px 18px 18px;font-size:15px;display:grid;gap:8px}
+.nm dt{font-weight:600;font-size:13px;color:var(--mute)}
+.nm dd{margin:0}
+.nm .tag{font-family:Fraunces,serif;font-size:18px;padding:12px 18px;border-top:1px solid var(--line);margin-top:auto}
+.nm .crit{font-size:14px;padding:10px 18px 16px;color:var(--mute)}
+.top{counter-reset:t;display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.top li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:start;padding:14px 16px;border-radius:10px;background:var(--panel);border:1px solid var(--line)}
+.top li::before{counter-increment:t;content:counter(t);font:600 32px/1 Fraunces,serif;width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:var(--pis);color:var(--t)}
+.dir{border-radius:14px;overflow:hidden;border:1px solid var(--line);margin-top:28px}
+.dir>header{padding:24px;color:var(--t)}
+.dir>header p{color:#33443a}
+.dir .in{padding:20px 24px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px}
+@media(max-width:860px){.dir .in{grid-template-columns:minmax(0,1fr)}}
+.pal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+@media(max-width:480px){.pal{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.chip{border-radius:8px;min-height:120px;padding:10px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(0,0,0,.06);cursor:pointer;font:inherit;text-align:left}
+.chip:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.chip small{font-size:13px;line-height:1.3}
+.chip code{font:500 14px "DM Mono",monospace}
+.spec{border:1px solid var(--line);border-radius:10px;padding:16px;margin-top:12px}
+.mock{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:10px;margin-top:12px}
+.mock>div{border-radius:8px;overflow:hidden;border:1px solid rgba(0,0,0,.08)}
+.ig{aspect-ratio:1;padding:14px;display:flex;flex-direction:column;justify-content:space-between}
+.sl{aspect-ratio:16/9;padding:14px;display:flex;flex-direction:column;justify-content:space-between}
+.web{grid-column:1/-1;padding:0}
+.web .bar{display:flex;gap:6px;padding:8px 12px;align-items:center;font-size:13px}
+.web .bar i{width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,.2)}
+.web .bd{padding:18px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:12px;align-items:center}
+ul.tight{margin:0;padding-left:20px}
+ul.tight li{margin-bottom:4px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-size:13px;font-weight:600;color:var(--mute)}
+.scroll{overflow-x:auto}
+.cat{margin-top:32px}
+.cat h3{display:flex;align-items:center;gap:10px}
+.cat h3::before{content:"";width:18px;height:18px;border-radius:4px;background:var(--c)}
+.pk{border-radius:12px;padding:20px;color:var(--t);display:flex;flex-direction:column;gap:8px}
+.pk h3{font-size:24px}
+.calc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
+@media(max-width:700px){.calc{grid-template-columns:minmax(0,1fr)}}
+.calc label{display:block;font-size:14px;font-weight:500;margin-bottom:10px}
+.calc input{display:block;width:100%;margin-top:4px;font:16px Inter,sans-serif;padding:10px 12px;min-height:44px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.calc input:focus-visible{outline:2px solid var(--ink)}
+.res{background:var(--man);color:var(--t);border-radius:12px;padding:20px}
+.res b{font:600 clamp(32px,5vw,48px)/1 Fraunces,serif;display:block;white-space:nowrap}
+.split{display:flex;height:56px;border-radius:8px;overflow:hidden;margin:8px 0 4px}
+.split div{display:grid;place-items:center;font:600 15px Inter,sans-serif;color:var(--t);white-space:nowrap}
+.roles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media(max-width:860px){.roles{grid-template-columns:minmax(0,1fr)}}
+.role{border-radius:12px;padding:20px;color:var(--t)}
+.flow{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin:20px 0;list-style:none;padding:0;counter-reset:f}
+.flow li{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px;font-size:14px;position:relative}
+.flow li b{display:block;font-size:15px}
+@media(max-width:900px){.flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.phases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media(max-width:860px){.phases{grid-template-columns:minmax(0,1fr)}}
+.ph{border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.ph header{padding:16px 18px;color:var(--t)}
+.ph header b{font:600 28px/1 Fraunces,serif;display:block}
+.ph ul{margin:0;padding:14px 18px 18px 36px;font-size:15px}
+.ph li{margin-bottom:6px}
+.warn{border-left:4px solid var(--dur);background:var(--panel);padding:14px 18px;border-radius:0 10px 10px 0;margin:16px 0}
+.check{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.check li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:start}
+.check li::before{content:"";width:18px;height:18px;margin-top:3px;border:2px solid var(--ink);border-radius:4px}
+.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--t);color:#fff;padding:10px 16px;border-radius:99px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.on{opacity:1}
+.mk-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.mk-tabs button{font:600 14px Inter,sans-serif;min-height:44px;padding:8px 18px;border-radius:99px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.mk-tabs button[aria-pressed=true]{background:#33463A;color:#E6EDDD;border-color:#33463A}
+.mk{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 40px -28px rgba(0,0,0,.45);color:#33463A;font-family:Inter,sans-serif;background:#fff}
+.mk-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:#f1f1ee}
+.mk-bar i{width:10px;height:10px;border-radius:50%;background:#d6d6d0}
+.mk-bar span{margin-left:10px;flex:1;max-width:320px;background:#fff;border-radius:6px;padding:4px 10px;font-size:13px;color:#6b6b66}
+.mk-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px clamp(16px,4vw,40px);background:#E6EDDD;flex-wrap:wrap}
+.mk-logo{font-weight:700;font-size:22px;letter-spacing:.02em}
+.mk-links{display:flex;gap:clamp(12px,2.5vw,28px);font-size:14px;flex-wrap:wrap;align-items:center}
+.mk-btn{display:inline-block;background:#33463A;color:#E6EDDD;padding:10px 18px;border-radius:99px;font-weight:600;font-size:14px;white-space:nowrap}
+.mk-hero{background:#E6EDDD;padding:clamp(24px,5vw,56px) clamp(16px,4vw,40px);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px;align-items:center}
+.mk-hero h4{margin:0 0 14px;font:700 clamp(28px,4.4vw,48px)/1.05 Inter,sans-serif;letter-spacing:-.03em}
+.mk-hero p{font-size:16px;margin:0 0 20px;max-width:44ch}
+.mk-art{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.mk-art div{border-radius:14px;min-height:110px;padding:14px;display:flex;align-items:flex-end;font-weight:600;font-size:14px}
+.mk-sec{padding:clamp(24px,4vw,44px) clamp(16px,4vw,40px)}
+.mk-sec h5{margin:0 0 16px;font:700 24px/1.1 Inter,sans-serif;letter-spacing:-.02em}
+.mk-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.mk-cards div{border-radius:12px;padding:18px;min-height:130px;display:flex;flex-direction:column;justify-content:space-between;font-weight:600}
+.mk-cards small{font-weight:400;font-size:13px}
+.mk-case{background:#F2EBD8;color:#7A6644;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center}
+.mk-case b{font:700 clamp(36px,6vw,60px)/1 Inter,sans-serif;letter-spacing:-.03em;white-space:nowrap}
+.mk-foot{background:#33463A;color:#E6EDDD;padding:22px clamp(16px,4vw,40px);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px}
+@media(max-width:720px){.mk-hero{grid-template-columns:minmax(0,1fr)}.mk-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.mk-links a{display:none}.mk-case{grid-template-columns:minmax(0,1fr)}}
+footer{border-top:1px solid var(--line)}
+@media(max-width:600px){table{font-size:14px}th,td{padding:6px 4px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:8px;border:0;padding:3px 0}.stack td::before{content:attr(data-l);font-weight:600;font-size:13px;color:var(--mute)}.stack td:empty{display:none}}
+</style>
+<script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
+</head>
+<body>
+
+<section class="band hero">
+  <div class="wrap">
+    <h1>Propuesta de creación de agencia: marca, servicios y estructura para tres socias</h1>
+    <div class="board" aria-label="Moodboard: nombres favoritos y paletas">
+      <div class="pin r1" style="background:#E6EDDD;color:#33463A;grid-column:span 2;grid-row:span 2"><b>NÜVA</b><span>Ideas que mueven marcas.</span></div>
+      <div class="pin sw r2" style="background:#E6EDDD;color:#33463A">Salvia claro #E6EDDD</div>
+      <div class="pin sw r3" style="background:#33463A;color:#E6EDDD">Verde bosque #33463A</div>
+      <div class="pin r2" style="background:#E6E2F1;color:#4E4370;grid-column:span 2"><b>PRISMA</b></div>
+      <div class="pin sw r1" style="background:#E6E2F1;color:#4E4370">Lila claro #E6E2F1</div>
+      <div class="pin r3" style="background:#F2EBD8;color:#7A6644;grid-column:span 2"><b>ÁUREA</b></div>
+      <div class="pin sw r2" style="background:#4E4370;color:#E6E2F1">Morado #4E4370</div>
+      <div class="pin r1" style="background:#E6E2F1;color:#4E4370;grid-column:span 2"><span>PRISMA</span><b style="font-size:clamp(20px,2.4vw,28px);line-height:1.15">Distintas perspectivas. Una visión.</b></div>
+      <div class="pin r2" style="background:#F2EBD8;color:#7A6644;grid-column:span 2"><span>ÁUREA</span><b style="font-size:clamp(20px,2.4vw,28px);line-height:1.15">Diseñada para generar impacto.</b></div>
+      <div class="pin sw r3" style="background:#F2EBD8;color:#7A6644">Crema #F2EBD8</div>
+      <div class="pin sw r1" style="background:#7A6644;color:#F2EBD8">Dorado tostado #7A6644</div>
+      <div class="pin sw r2" style="background:#BFDCF4;color:#1C2620">Azul cielo #BFDCF4</div>
+    </div>
+  </div>
+</section>
+
+<nav class="scroll" aria-label="Secciones">
+  <a href="#naming">Naming</a><a href="#identidad">Identidad visual</a><a href="#valor">Diferenciadores</a><a href="#servicios">Servicios</a><a href="#acuerdo">Acuerdo entre socias</a><a href="#operacion">Organización</a>
+</nav>
+
+<section class="band" id="naming">
+  <div class="wrap">
+    <h2>Naming: NÜVA, PRISMA y ÁUREA</h2>
+    <div class="names" id="names"></div>
+
+  </div>
+</section>
+
+<section class="band" id="identidad" style="background:var(--panel)">
+  <div class="wrap">
+    <h2>Identidad visual: una sola paleta para las tres marcas</h2>
+    <div id="dirs"></div>
+    <h3 style="margin-top:40px;font-size:clamp(24px,3vw,32px)">Así se vería en una página</h3>
+    <div class="mk-tabs" role="group" aria-label="Ver con otro nombre"><button type="button" id="mk-1" aria-pressed="true">NÜVA</button><button type="button" id="mk-2" aria-pressed="false">PRISMA</button><button type="button" id="mk-3" aria-pressed="false">ÁUREA</button></div>
+    <div class="mk" aria-label="Ejemplo de página web con la paleta">
+      <div class="mk-bar"><i></i><i></i><i></i><span id="mk-url">nuva.mx</span></div>
+      <div class="mk-nav"><span class="mk-logo" id="mk-logo">NÜVA</span><span class="mk-links"><a>Servicios</a><a>Casos</a><a>Nosotras</a><span class="mk-btn">Agenda una llamada</span></span></div>
+      <div class="mk-hero">
+        <div><h4>Estrategia y diseño que impulsan tu marca.</h4><p id="mk-tag">Ideas que mueven marcas. Branding, contenido y publicidad digital en un solo equipo.</p><span class="mk-btn">Conoce nuestros servicios</span></div>
+        <div class="mk-art"><div style="background:#E6E2F1;color:#4E4370;min-height:160px">Branding</div><div style="background:#BFDCF4;color:#33463A;min-height:160px">Publicidad digital</div><div style="background:#F2EBD8;color:#7A6644">Contenido</div><div style="background:#33463A;color:#E6EDDD">Diseño web</div></div>
+      </div>
+      <div class="mk-sec" style="background:#fff">
+        <h5>Nuestros servicios</h5>
+        <div class="mk-cards"><div style="background:#E6E2F1;color:#4E4370">Diseño gráfico y branding<small>Identidad, redes y anuncios</small></div><div style="background:#BFDCF4;color:#33463A">Diseño web<small>Sitios y landing pages</small></div><div style="background:#F2EBD8;color:#7A6644">Contenido<small>Foto, video y reels</small></div><div style="background:#E6EDDD;color:#33463A">Estrategia y ads<small>Meta Ads y Google Ads</small></div></div>
+      </div>
+      <div class="mk-sec mk-case"><div><h5 style="color:#7A6644">Caso de éxito</h5><p style="margin:0;max-width:40ch">Campaña de mensajes en Meta para una marca de eventos en Monterrey.</p></div><b>+212%</b></div>
+      <div class="mk-foot"><strong id="mk-foot">NÜVA</strong><span>Monterrey, N.L. · hola@nuva.mx</span></div>
+    </div>
+    <p class="small" style="margin-top:10px">Textos y cifras de ejemplo.</p>
+  </div>
+</section>
+
+<section class="band" id="valor">
+  <div class="wrap">
+    <h2>Lo que nos hace diferentes</h2>
+    <div class="grid3" style="margin-top:16px">
+      <div class="role" style="background:#E6EDDD;color:#33463A"><h3 style="font-size:clamp(24px,2.6vw,30px)">Diseño y pauta en la misma mesa</h3><p>Quien diseña tus anuncios ve sus resultados. Si un creativo no funciona, lo cambiamos en días, no en semanas, sin pasar por otra agencia.</p></div>
+      <div class="role" style="background:#E6E2F1;color:#4E4370"><h3 style="font-size:clamp(24px,2.6vw,30px)">Marcas que se ven grandes y se miden</h3><p>Diseño con nivel editorial y campañas con números claros. Tu marca se ve como líder de su categoría y cada mes sabes cuánto te costó cada cliente.</p></div>
+      <div class="role" style="background:#F2EBD8;color:#7A6644"><h3 style="font-size:clamp(24px,2.6vw,30px)">Las socias atienden tu cuenta</h3><p>Sin cadenas de juniors ni intermediarios: hablas directamente con las especialistas que crean, pautan y deciden. Pocas marcas a la vez, atención total.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="servicios" style="background:var(--panel)">
+  <div class="wrap">
+    <h2>Catálogo de servicios: cuatro líneas que se venden juntas o por separado</h2>
+    <div id="cats"></div>
+  </div>
+</section>
+
+
+
+<section class="band" id="acuerdo">
+  <div class="wrap">
+    <h2>Acuerdo entre socias: 15 puntos que deben quedar firmados antes de empezar</h2>
+    <div class="scroll" style="margin-top:16px"><table class="stack">
+      <thead><tr><th>Punto</th><th>Qué definir</th></tr></thead>
+      <tbody id="pacto"></tbody>
+    </table></div>
+  </div>
+</section>
+
+<section class="band" id="operacion" style="background:var(--panel)">
+  <div class="wrap">
+    <h2>Organización interna</h2>
+    <div class="roles">
+      <div class="role" style="background:#cdc3ea"><h3>Dirección creativa y diseño</h3><ul class="tight"><li>Branding e identidad</li><li>Dirección de arte de cada cuenta</li><li>Web, landing y UX/UI</li><li>Revisión final de calidad visual</li></ul></div>
+      <div class="role" style="background:#d2e29b"><h3>Diseño y producción visual</h3><ul class="tight"><li>Piezas para redes y anuncios</li><li>Foto, video, reels y edición</li><li>Calendarios y guiones</li><li>Banco de recursos y plantillas</li></ul></div>
+      <div class="role" style="background:#bfdcf4"><h3>Estrategia y publicidad digital</h3><ul class="tight"><li>Ventas y propuestas</li><li>Estrategia, campañas y audiencias</li><li>Reportes y análisis</li><li>Finanzas, facturación y cobranza</li></ul></div>
+    </div>
+  </div>
+</section>
+
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+{
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const N=[
+['NÜVA','Estudio de estrategia creativa','Inspirado en la palabra "nueva" y en la idea de innovación. Es un nombre conceptual, no una palabra de origen tradicional.','Una marca que representa nuevas ideas, nuevas perspectivas y evolución.','Representa la capacidad de transformar marcas a través del diseño y la estrategia. Es corto, fácil de pronunciar y tiene potencial visual.','Fresca, minimalista, moderna, creativa y sofisticada.','Ideas que mueven marcas.','La Ü no se usa así en español: dominio, redes y razón social como NUVA. Verifiquen marcas parecidas ya registradas.','#E6EDDD|#33463A','Sistema Modular: los dos puntos de la Ü como símbolo y punto de datos.'],
+['PRISMA','Agencia creativa y digital','El prisma descompone la luz en distintos colores: tres perspectivas y especialidades creando algo extraordinario.','Una misma idea puede transformarse en muchas posibilidades.','Las tres aportan algo diferente (diseño, creatividad y estrategia); comunica diversidad de ideas trabajando hacia un mismo objetivo.','Colorida, artística, inteligente y multidisciplinaria.','Distintas perspectivas. Una visión.','Muy usado: ya existen agencias llamadas Prisma. Difícil de registrar y de posicionar en Google.','#E6E2F1|#4E4370','Collage Vivo: la luz que se abre en la paleta pastel completa.'],
+['ÁUREA','Donde la estrategia se encuentra con la creatividad','Inspirado en la proporción áurea, concepto matemático de armonía y composición visual.','La unión entre equilibrio, estética y propósito.','Conecta con el mundo del diseño y con la idea de que cada decisión creativa tenga una intención.','Elegante, estratégica, artística y premium.','Diseñada para generar impacto.','La tilde complica dominios; el nombre es común en belleza y joyería, lo que puede acercarla a lo lifestyle.','#F2EBD8|#7A6644','Editorial Salvia: espiral áurea como retícula y símbolo.']];
+document.getElementById('names').innerHTML=N.map((n,i)=>`<article class="nm"><header style="background:${n[8].split('|')[0]};color:${n[8].split('|')[1]};text-align:center;padding:26px 18px"><b style="font-family:Inter,sans-serif;font-weight:700;font-size:36px">${esc(n[0])}</b><span style="display:block;margin-top:14px;font-size:15px;font-weight:500;letter-spacing:.02em">${esc(n[1].toUpperCase())}</span><span style="display:block;margin-top:4px;font-size:15px">${esc(n[6])}</span></header><dl><div><dt>Concepto</dt><dd>${esc(n[3])}</dd></div><div><dt>Significado</dt><dd>${esc(n[2])}</dd></div><div><dt>Personalidad</dt><dd>${esc(n[5])}</dd></div><div><dt>Por qué funciona</dt><dd>${esc(n[4])}</dd></div></dl><div class="tag">“${esc(n[6])}”</div></article>`).join('');
+
+const PAL=[
+['Salvia claro','#E6EDDD','Fondo principal','Calma, frescura y crecimiento. Es el color que más se verá: fondos de redes, web y presentaciones.','#33463A'],
+['Verde bosque','#33463A','Texto y logo','Confianza, seriedad y estabilidad. Da el tono profesional y es el color del logotipo.','#E6EDDD'],
+['Lila claro','#E6E2F1','Fondo secundario','Creatividad e imaginación. Distingue contenidos de diseño y branding.','#4E4370'],
+['Morado','#4E4370','Texto sobre lila','Inteligencia y sofisticación. Para títulos y cifras sobre fondos lila.','#E6E2F1'],
+['Crema','#F2EBD8','Fondo cálido','Cercanía y calidez. Ideal para casos de éxito, testimonios y fotografía.','#7A6644'],
+['Dorado tostado','#7A6644','Acento','Valor y calidad premium. Para detalles, íconos, botones y datos destacados.','#F2EBD8'],
+['Azul cielo','#BFDCF4','Fondo complementario','','#1C2620']];
+document.getElementById('dirs').innerHTML=`<div class="pal" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr))">${PAL.map(c=>`<button type="button" class="chip" data-hex="${c[1]}" style="background:${c[1]};color:${c[4]};min-height:200px"><small><strong style="font-size:16px">${esc(c[0])}</strong><br>${esc(c[2])}</small><code>${c[1]}</code></button>`).join('')}</div>
+<div class="grid2" style="margin-top:24px">
+<div class="card"><h3>Cómo se combinan</h3><div style="display:grid;gap:8px;margin-top:10px">${[[0,1],[2,3],[4,5],[6,1]].map(([i,j])=>`<div style="background:${PAL[i][1]};color:${PAL[j][1]};border-radius:8px;padding:14px 16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><strong>${esc(PAL[j][0])} sobre ${esc(PAL[i][0].toLowerCase())}</strong><span style="font:500 14px 'DM Mono',monospace">${PAL[j][1]} / ${PAL[i][1]}</span></div>`).join('')}</div></div>
+<div class="card"><h3>En qué proporción</h3><div class="split" style="height:64px">${[[0,50],[2,18],[6,12],[4,12],[1,8]].map(p=>`<div style="width:${p[1]}%;background:${PAL[p[0]][1]};color:${PAL[p[0]][4]}">${p[1]}%</div>`).join('')}</div><ul class="tight" style="margin-top:12px"><li><strong>50%</strong> salvia claro</li><li><strong>18%</strong> lila claro</li><li><strong>12%</strong> azul cielo</li><li><strong>12%</strong> crema</li><li><strong>8%</strong> verde bosque, morado y dorado tostado</li></ul></div>
+</div>`;
+const T=document.getElementById('toast');let tt;
+document.getElementById('dirs').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;const h=b.dataset.hex;const ok=()=>{T.textContent='Copiado '+h;T.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>T.classList.remove('on'),1400)};try{navigator.clipboard.writeText(h).then(ok,()=>{T.textContent=h;T.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>T.classList.remove('on'),1800)})}catch(err){}});
+
+const S=[
+['Diseño gráfico y branding','#E6E2F1',[
+['Identidad visual y branding','Investigación, concepto, logo y variantes, paleta, tipografías, aplicaciones y guía de marca.','Marcas que se ven improvisadas y no cobran lo que valen.','"Tu marca es lo primero que el cliente juzga; hagamos que justifique tu precio."'],
+['Diseño de publicaciones para redes','Plantillas, posts, carruseles e historias alineadas a la estrategia.','Perfiles sin coherencia que no se recuerdan.','"Que cualquier post se reconozca como tuyo sin ver el nombre."'],
+['Anuncios y piezas publicitarias','Creativos por formato y ubicación, versiones para pruebas A/B.','Anuncios genéricos con costos altos por resultado.','"El creativo es la mitad del rendimiento de una campaña."'],
+['Presentaciones y materiales comerciales','Presentaciones de venta, catálogos, propuestas, tarjetas, papelería.','Equipos de venta con materiales que restan credibilidad.','"Tu presentación cierra o pierde ventas cuando tú no estás."']]],
+['Diseño web y experiencia digital','#F2EBD8',[
+['Diseño de páginas web','Arquitectura, diseño de secciones, textos base y entrega lista para desarrollo o en Squarespace, Webflow o similar.','Sitios viejos o inexistentes que espantan clientes.','"Tu web trabaja 24/7; que venda como tu mejor vendedor."'],
+['Landing pages','Una página por campaña con un solo objetivo y formulario o WhatsApp.','Anuncios que mandan a una web confusa.','"Cada peso de pauta llega a una página hecha para convertir."'],
+['Sitios orientados a conversión','Embudos, llamadas a la acción, pruebas y medición con píxeles.','Visitas que no se convierten en contactos.','"Medimos dónde se van tus visitas y lo arreglamos."'],
+['UX/UI según alcance','Flujos, wireframes y prototipos en Figma para apps o plataformas.','Productos digitales difíciles de usar.','"Menos clics, más clientes." Solo con alcance cerrado.']]],
+['Creación de contenido','#E6EDDD',[
+['Planeación de contenido','Pilares, formatos, frecuencia y objetivos por red.','Publicar por publicar.','"Cada publicación tiene un trabajo que hacer."'],
+['Calendarios de contenido','Calendario mensual aprobado con fechas, copys y formatos.','Improvisación y retrasos.','"Apruebas una vez al mes y te olvidas."'],
+['Conceptos y guiones','Ideas creativas, guiones para reels y campañas.','Videos sin gancho que nadie termina.','"Los primeros 3 segundos deciden; los escribimos con intención."'],
+['Producción de foto y video','Sesiones planeadas con lista de tomas.','Fotos de stock o de celular que no reflejan la calidad real.','"Tu negocio real, fotografiado como marca grande."'],
+['Grabación en instalaciones del cliente','Jornada de grabación en sitio para producir contenido de 1 a 2 meses.','Falta de tiempo del cliente para grabar.','"Una mañana de grabación, un mes de contenido."'],
+['Reels y videos cortos','Edición dinámica, subtítulos, música con licencia.','Bajo alcance orgánico.','"El formato que más alcance da, hecho con criterio de marca."'],
+['Edición de video y foto','Retoque, color, cortes y versiones por formato.','Material bueno mal aprovechado.','"Tu material, en su mejor versión."']]],
+['Estrategia y publicidad digital','#E6EDDD',[
+['Estrategia de marketing digital','Diagnóstico, objetivos, público, embudo, canales y presupuesto.','Inversión sin plan ni métricas.','"Antes de gastar en anuncios, definamos qué significa ganar."'],
+['Meta Ads','Campañas de mensajes, leads, tráfico y ventas en Facebook e Instagram.','Publicaciones promocionadas sin estrategia.','"Dejemos de impulsar posts y empecemos a conseguir clientes."'],
+['Google Ads','Búsqueda, Performance Max, YouTube y campañas locales.','No aparecer cuando el cliente busca.','"Aparece justo cuando alguien busca lo que vendes."'],
+['ChatGPT Ads y formatos nuevos','Pilotos con presupuesto acotado en canales emergentes; en México opera desde agosto de 2026.','Llegar tarde a donde se toman decisiones de compra.','"Probemos antes que tu competencia, con riesgo controlado."'],
+['Configuración y optimización','Píxeles, eventos, estructura de cuentas, pruebas y ajustes semanales.','Cuentas mal configuradas que desperdician presupuesto.','"Primero arreglamos la base; luego escalamos."'],
+['Segmentación de audiencias','Audiencias por intereses, similares, remarketing y listas propias.','Anuncios que le llegan a cualquiera.','"Hablarle solo a quien puede comprarte."'],
+['Generación de leads y conversión','Formularios, WhatsApp, landing, seguimiento y calificación de prospectos.','Muchos mensajes, pocas ventas.','"Contamos clientes, no likes."'],
+['Análisis y reportes','Reporte mensual con resultados, aprendizajes y siguientes pasos.','No saber si la inversión funciona.','"Cada mes sabrás cuánto te costó cada cliente."']]]];
+document.getElementById('cats').innerHTML=`<div class="grid2" style="margin-top:20px">${S.map(c=>`<div class="card" style="background:${c[1]};border:0;color:#1c2620"><h3>${esc(c[0])}</h3><ul class="tight" style="margin-top:8px">${c[2].map(r=>`<li>${esc(r[0])}</li>`).join('')}</ul></div>`).join('')}</div>`;
+
+
+const A=[
+['Participación','Porcentaje de cada socia y si se gana con el tiempo (vesting).','Vesting de 4 años con corte al primer año.'],
+['Aportaciones','Dinero, equipo, software, cartera de clientes; cómo se valúa lo que no es dinero.','Inventario firmado con valor acordado; el capital extra como préstamo.'],
+['Responsabilidades','Rol, decisiones propias y entregables de cada una.','Descripción de puesto por socia, revisada cada 6 meses.'],
+['Horarios y carga','Tiempo completo o parcial, disponibilidad, vacaciones.','Horas mínimas por semana; si baja, baja el sueldo, no la participación devengada.'],
+['Sueldos y utilidades','Tabulador, cuándo se cobra, qué porcentaje se reinvierte.','Sueldo por rol; reparto de utilidades tras reservar para la empresa.'],
+['Toma de decisiones','Qué decide cada área, qué requiere mayoría o unanimidad.','Unanimidad para socios nuevos, deudas, venta y cambio de nombre.'],
+['Salida voluntaria','Aviso previo, valuación y forma de pago de su parte.','Aviso de 90 días y pago en parcialidades.'],
+['Deja de trabajar pero conserva participación','Si mantiene su porcentaje completo o solo lo devengado.','Conserva lo devengado; pierde voto en lo operativo.'],
+['Venta de participación','Derecho de preferencia de las demás socias.','Primero se ofrece a las socias, al mismo precio que a un tercero.'],
+['Desacuerdos','Escalamiento: plática, mediación, arbitraje.','Mediación antes de cualquier vía legal.'],
+['Propiedad de marca y materiales','Marca, diseños, cuentas, dominios, archivos y clientes son de la sociedad.','Cesión de derechos firmada; accesos de administración a nombre de la empresa.'],
+['Confidencialidad','Información de clientes, precios y procesos.','NDA para socias, colaboradores y freelancers.'],
+['Gastos y cuentas','Límite de gasto sin consulta, firmas mancomunadas, reportes.','Tope mensual por socia; arriba de él, firma de dos.'],
+['Incumplimiento','Qué pasa si una socia no cumple; advertencias y exclusión.','Dos avisos por escrito y luego causal de exclusión o compra forzosa.'],
+['Clientes propios','Si cada una puede tener freelance y cómo se reparten clientes que consigue por su cuenta.','Todo cliente del giro entra a la agencia; comisión de venta para quien lo trae.']];
+document.getElementById('pacto').innerHTML=A.map(r=>`<tr><td><strong>${esc(r[0])}</strong></td><td>${esc(r[1])}</td></tr>`).join('');
+
+const MK=[['NÜVA','nuva','Ideas que mueven marcas.'],['PRISMA','prisma','Distintas perspectivas. Una visión.'],['ÁUREA','aurea','Diseñada para generar impacto.']];
+const mkSet=k=>{const m=MK[k];document.getElementById('mk-logo').textContent=m[0];document.getElementById('mk-foot').textContent=m[0];document.getElementById('mk-url').textContent=m[1]+'.mx';document.getElementById('mk-tag').textContent=m[2]+' Branding, contenido y publicidad digital en un solo equipo.';document.querySelector('.mk-foot span').textContent='Monterrey, N.L. · hola@'+m[1]+'.mx';[1,2,3].forEach(i=>document.getElementById('mk-'+i).setAttribute('aria-pressed',i===k+1))};
+[1,2,3].forEach(i=>document.getElementById('mk-'+i).addEventListener('click',()=>mkSet(i-1)));
+}
+</script>
+</body>
+</html>
